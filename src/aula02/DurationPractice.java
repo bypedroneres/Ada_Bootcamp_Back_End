@@ -3,7 +3,6 @@ package aula02;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 
 public class DurationPractice {
 
