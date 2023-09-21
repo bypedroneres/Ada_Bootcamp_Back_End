@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.LocalDateTime;
 
-public class EventosEspeciais {
+public class A01EX01 {
     public LocalDate evento1() {
         return LocalDate.of(2000, 11, 1);
     }
@@ -16,7 +16,7 @@ public class EventosEspeciais {
     }
 
     public static void main(String[] args) {
-        EventosEspeciais eventos = new EventosEspeciais();
+        A01EX01 eventos = new A01EX01();
         
         LocalDate dataEvento1 = eventos.evento1();
         System.out.println("Dia em que eu nasci: " + dataEvento1);
