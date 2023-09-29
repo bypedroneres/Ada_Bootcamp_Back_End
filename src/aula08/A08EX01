@@ -1,0 +1,36 @@
+import java.util.Optional;
+
+public class A08EX01 {
+    private String nome;
+    private Optional<String> email;
+    private Optional<Integer> idade;
+
+    public Usuario(String nome, Optional<String> email, Optional<Integer> idade) {
+        this.nome = nome;
+        this.email = email;
+        this.idade = idade;
+    }
+
+    public void mostrarDetalhes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("E-mail: " + email.orElse("Informação não disponível"));
+        System.out.println("Idade: " + idade.map(Object::toString).orElse("Informação não disponível"));
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // Criando alguns usuários com diferentes combinações de informações disponíveis e ausentes
+        Usuario usuario1 = new Usuario("Alice", Optional.of("alice@example.com"), Optional.of(30));
+        Usuario usuario2 = new Usuario("Bob", Optional.empty(), Optional.of(25));
+        Usuario usuario3 = new Usuario("Carol", Optional.of("carol@example.com"), Optional.empty());
+        Usuario usuario4 = new Usuario("David", Optional.empty(), Optional.empty());
+
+        // Criando uma lista de usuários
+        Usuario[] usuarios = {usuario1, usuario2, usuario3, usuario4};
+
+        // Exibindo os detalhes de cada usuário
+        for (Usuario usuario : usuarios) {
+            usuario.mostrarDetalhes();
+        }
+    }
+}
